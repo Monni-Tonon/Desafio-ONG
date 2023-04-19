@@ -26,7 +26,8 @@ Ong.init({
 { // equivalente ao .define
     sequelize, 
     modelName:'ong', 
-    tableName: 'ongs'
+    tableName: 'ongs',
+    paranoid: true
 });
 
 // Associacao:(1:N)

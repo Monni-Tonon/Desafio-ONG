@@ -18,7 +18,8 @@ Doacao.init({
 { // equivalente ao .define
     sequelize, 
     modelName:'doacao', 
-    tableName: 'doacoes'
+    tableName: 'doacoes',
+    paranoid: true
 });
 
 

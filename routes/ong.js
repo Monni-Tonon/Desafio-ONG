@@ -4,7 +4,7 @@ const ong = express.Router();
 
 ong.route("/")
 .get(async (req, res) => {
-    
+
     try{
         const ongs = await Ong.findAll();
         res.status(200).json(ongs);
@@ -33,7 +33,17 @@ ong.route("/")
 })
 
 .delete(async (req, res) => {
-    res.json({mensagem: "rota ong delete"})
+    const {id} = req.body
+    if(!id) {   // confiro se o id foi informado
+        return res.status(400).json({ mensagem: "Campo obrigatório não informado (id)" });
+    }
+
+    try {
+        const response = await Ong.destroy({where: {id: id}});
+        res.status(200).json({message: `Ong deletada: ${nome}`});
+    } catch(err) {
+        res.status(500).json(err);
+    }
 });
 
 
