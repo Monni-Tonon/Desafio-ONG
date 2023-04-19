@@ -6,12 +6,14 @@ const morgan = require("morgan");
 const app = express();
 
 const ong = require("./routes/ong");
+const doacoes = require("./routes/doacoes");
 
 app.use(express.json());    //transitar dados json
 app.use(morgan("dev"));
 
 //rotas
 app.use("/ong", ong)
+app.use("/ong/doacoes", doacoes)
 
 
 
