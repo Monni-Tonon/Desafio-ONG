@@ -1,21 +1,27 @@
 const { Model, DataTypes } = require("sequelize");
 
-class Doacoes extends Model {}
+const sequelize = require("../database/db"); //conexao com banco( é a msma q connection.sequelize)
+const Ong = require("./Ong");
 
-Ong.init({
+class Doacao extends Model {}
+
+Doacao.init({
     doador: {
         type: DataTypes.STRING,
         allowNull: false
     },
     valor: {
-        type: DataTypes.NUMBER,
+        type: DataTypes.FLOAT,
         allowNull: false
 }
 },
 { // equivalente ao .define
     sequelize, 
-    modelName:'doacoes', 
+    modelName:'doacao', 
     tableName: 'doacoes'
 });
 
-module.exports = Doacoes;
+
+//Doacao.hasOne(Ong);
+
+module.exports = Doacao;

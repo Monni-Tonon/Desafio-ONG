@@ -1,4 +1,4 @@
-//const Doacoes = require("../database/doacoes");
+const Doacao = require("../models/Doacao");
 const express = require("express");
 const doacoes = express.Router();
 

@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 const Doacao = require("./Doacao");
+const sequelize = require("../database/db");     //conexao com banco( é a msma q connection.sequelize)
 
 class Ong extends Model {}
 
@@ -17,7 +18,7 @@ Ong.init({
         type: DataTypes.STRING,
         allowNull: false
     },
-    dt_funcadao: {
+    dt_fundacao: {
         type: DataTypes.DATE,
         allowNull: false
     }
