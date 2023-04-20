@@ -19,7 +19,7 @@ ong.route("/")
     const {cnpj, nome, tipo, dt_fundacao} = req.body;
     // validação dos campos se preenchidos
     if(!cnpj || !nome || !tipo || !dt_fundacao) {
-        return res.status(400).json({message: "Campo obrigatorio nao informado."});
+        return res.status(404).json({message: "Campo obrigatorio nao informado."});
     }
     
     try {
@@ -39,7 +39,7 @@ ong.route("/")
 
     const findOng = await Ong.findOne({where: {cnpj}});
     if (!findOng) {
-        return res.status(400).json({message: "Ong nao encontrada!"});
+        return res.status(404).json({message: "Ong nao encontrada!"});
     }
 
     try {
@@ -60,7 +60,7 @@ ong.route("/")
         const findOng = Ong.findByPk(id);
         
         if(!findOng) {
-            return res.status(400).json({message: "Ong nao encontrada!"});
+            return res.status(404).json({message: "Ong nao encontrada!"});
         }
     }
     try {
