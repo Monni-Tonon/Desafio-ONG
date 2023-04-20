@@ -3,6 +3,7 @@ const express = require("express");
 const ong = express.Router();
 
 ong.route("/")
+// LISTAR ONGS
 .get(async (req, res) => {
 
     try{
@@ -13,6 +14,7 @@ ong.route("/")
     }
 })
 
+// CADASTRAR NOVA ONG
 .post(async (req, res) => {
     const {cnpj, nome, tipo, dt_fundacao} = req.body;
     // validação dos campos se preenchidos
@@ -28,18 +30,41 @@ ong.route("/")
     }
 })
 
+// EDITAR ONGS
 .put(async (req, res) => {
-    res.json({mensagem: "rota ong put"})
-})
+    const {cnpj, nome, tipo, dt_fundacao} = req.body;
+    if(!cnpj || !nome || !tipo || !dt_fundacao) {
+        return res.status(400).json({message: "Campo obrigatorio nao informado."});
+    }
 
-.delete(async (req, res) => {
-    const {id} = req.body
-    if(!id) {   // confiro se o id foi informado
-        return res.status(400).json({ mensagem: "Campo obrigatório não informado (id)" });
+    const findOng = await Ong.findOne({where: {cnpj}});
+    if (!findOng) {
+        return res.status(400).json({message: "Ong nao encontrada!"});
     }
 
     try {
-        const response = await Ong.destroy({where: {id: id}});
+        await findOng.update({nome, tipo, dt_fundacao});
+        res.status(200).json(`ONG atualizada: ${findOng.nome}.`)
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
+// DELETAR ONG
+.delete(async (req, res) => {
+    const {id} = req.body
+    if(!id) {   // confiro se o id foi informado
+        return res.status(400).json({ message: "Campo obrigatório não informado (id)" });
+    }
+    if(!id) {
+        const findOng = Ong.findByPk(id);
+        
+        if(!findOng) {
+            return res.status(400).json({message: "Ong nao encontrada!"});
+        }
+    }
+    try {
+        const response = await Ong.destroy(findOng);
         res.status(200).json({message: `Ong deletada: ${nome}`});
     } catch(err) {
         res.status(500).json(err);

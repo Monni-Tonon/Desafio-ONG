@@ -329,3 +329,34 @@
 [2023-04-19T21:15:00.316Z] Executing (default): SHOW INDEX FROM `ongs`
 [2023-04-19T21:15:00.339Z] Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'doacoes' AND TABLE_SCHEMA = 'ong_db'
 [2023-04-19T21:15:00.346Z] Executing (default): SHOW INDEX FROM `doacoes`
+[2023-04-20T12:47:58.836Z] Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ongs' AND TABLE_SCHEMA = 'ong_db'
+[2023-04-20T12:47:58.966Z] Executing (default): SHOW INDEX FROM `ongs`
+[2023-04-20T12:47:59.014Z] Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'doacoes' AND TABLE_SCHEMA = 'ong_db'
+[2023-04-20T12:47:59.020Z] Executing (default): SHOW INDEX FROM `doacoes`
+[2023-04-20T12:48:03.151Z] Executing (default): SELECT `id`, `cnpj`, `nome`, `tipo`, `dt_fundacao`, `createdAt`, `updatedAt`, `deletedAt` FROM `ongs` AS `ong` WHERE (`ong`.`deletedAt` IS NULL AND `ong`.`cnpj` = '32979648000101');
+[2023-04-20T12:49:03.586Z] Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ongs' AND TABLE_SCHEMA = 'ong_db'
+[2023-04-20T12:49:03.611Z] Executing (default): SHOW INDEX FROM `ongs`
+[2023-04-20T12:49:03.631Z] Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'doacoes' AND TABLE_SCHEMA = 'ong_db'
+[2023-04-20T12:49:03.638Z] Executing (default): SHOW INDEX FROM `doacoes`
+[2023-04-20T12:49:05.737Z] Executing (default): SELECT `id`, `cnpj`, `nome`, `tipo`, `dt_fundacao`, `createdAt`, `updatedAt`, `deletedAt` FROM `ongs` AS `ong` WHERE (`ong`.`deletedAt` IS NULL AND `ong`.`cnpj` = '32979648000101');
+[2023-04-20T12:51:02.742Z] Executing (default): SELECT `id`, `cnpj`, `nome`, `tipo`, `dt_fundacao`, `createdAt`, `updatedAt`, `deletedAt` FROM `ongs` AS `ong` WHERE (`ong`.`deletedAt` IS NULL);
+[2023-04-20T12:51:18.716Z] Executing (default): INSERT INTO `ongs` (`id`,`cnpj`,`nome`,`tipo`,`dt_fundacao`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?);
+[2023-04-20T12:51:33.054Z] Executing (default): INSERT INTO `ongs` (`id`,`cnpj`,`nome`,`tipo`,`dt_fundacao`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?);
+[2023-04-20T12:51:53.057Z] Executing (default): INSERT INTO `ongs` (`id`,`cnpj`,`nome`,`tipo`,`dt_fundacao`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?);
+[2023-04-20T12:51:59.396Z] Executing (default): SELECT `id`, `cnpj`, `nome`, `tipo`, `dt_fundacao`, `createdAt`, `updatedAt`, `deletedAt` FROM `ongs` AS `ong` WHERE (`ong`.`deletedAt` IS NULL);
+[2023-04-20T12:52:49.522Z] Executing (default): SELECT `id`, `cnpj`, `nome`, `tipo`, `dt_fundacao`, `createdAt`, `updatedAt`, `deletedAt` FROM `ongs` AS `ong` WHERE (`ong`.`deletedAt` IS NULL AND `ong`.`cnpj` = '32979648000101');
+[2023-04-20T12:53:50.577Z] Executing (default): SELECT `id`, `cnpj`, `nome`, `tipo`, `dt_fundacao`, `createdAt`, `updatedAt`, `deletedAt` FROM `ongs` AS `ong` WHERE (`ong`.`deletedAt` IS NULL AND `ong`.`cnpj` = '32979648000100');
+[2023-04-20T12:56:21.174Z] Executing (default): SELECT `id`, `cnpj`, `nome`, `tipo`, `dt_fundacao`, `createdAt`, `updatedAt`, `deletedAt` FROM `ongs` AS `ong` WHERE (`ong`.`deletedAt` IS NULL AND `ong`.`cnpj` = '32979648000100');
+[2023-04-20T13:01:50.495Z] Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ongs' AND TABLE_SCHEMA = 'ong_db'
+[2023-04-20T13:01:50.631Z] Executing (default): SHOW INDEX FROM `ongs`
+[2023-04-20T13:01:50.695Z] Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'doacoes' AND TABLE_SCHEMA = 'ong_db'
+[2023-04-20T13:01:50.709Z] Executing (default): SHOW INDEX FROM `doacoes`
+[2023-04-20T13:01:56.386Z] Executing (default): SELECT `id`, `cnpj`, `nome`, `tipo`, `dt_fundacao`, `createdAt`, `updatedAt`, `deletedAt` FROM `ongs` AS `ong` WHERE (`ong`.`deletedAt` IS NULL AND `ong`.`cnpj` = '32979648000100');
+[2023-04-20T13:01:56.418Z] Executing (default): UPDATE `ongs` SET `nome`=?,`updatedAt`=? WHERE `id` = ?
+[2023-04-20T13:02:09.234Z] Executing (default): SELECT `id`, `cnpj`, `nome`, `tipo`, `dt_fundacao`, `createdAt`, `updatedAt`, `deletedAt` FROM `ongs` AS `ong` WHERE (`ong`.`deletedAt` IS NULL);
+[2023-04-20T13:05:19.544Z] Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'ongs' AND TABLE_SCHEMA = 'ong_db'
+[2023-04-20T13:05:19.606Z] Executing (default): SHOW INDEX FROM `ongs`
+[2023-04-20T13:05:19.658Z] Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'doacoes' AND TABLE_SCHEMA = 'ong_db'
+[2023-04-20T13:05:19.670Z] Executing (default): SHOW INDEX FROM `doacoes`
+[2023-04-20T13:05:36.384Z] Executing (default): SELECT `id`, `cnpj`, `nome`, `tipo`, `dt_fundacao`, `createdAt`, `updatedAt`, `deletedAt` FROM `ongs` AS `ong` WHERE (`ong`.`deletedAt` IS NULL AND `ong`.`cnpj` = '32979648000101');
+[2023-04-20T13:06:16.479Z] Executing (default): SELECT `id`, `cnpj`, `nome`, `tipo`, `dt_fundacao`, `createdAt`, `updatedAt`, `deletedAt` FROM `ongs` AS `ong` WHERE (`ong`.`deletedAt` IS NULL AND `ong`.`cnpj` = '32979648000101');
