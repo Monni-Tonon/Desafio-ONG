@@ -24,7 +24,7 @@ ong.route("/")
     
     try {
         const novaOng = await Ong.create(req.body);
-        res.status(201).json(`ONG cadastrada, nome: ${novaOng.nome}.`)
+        res.status(201).json(novaOng)
     } catch (err){
         res.status(400).json(err);
     }
@@ -44,7 +44,7 @@ ong.route("/")
 
     try {
         await findOng.update({nome, tipo, dt_fundacao});
-        res.status(200).json(`ONG atualizada: ${findOng.nome}.`)
+        res.status(200).json(findOng)
     } catch (err) {
         res.status(500).json(err);
     }
@@ -52,22 +52,22 @@ ong.route("/")
 
 // DELETAR ONG
 .delete(async (req, res) => {
-    const {id} = req.body
-    if(!id) {   // confiro se o id foi informado
-        return res.status(400).json({ message: "Campo obrigatório não informado (id)" });
-    }
-    if(!id) {
-        const findOng = Ong.findByPk(id);
-        
-        if(!findOng) {
-            return res.status(404).json({message: "Ong nao encontrada!"});
-        }
-    }
     try {
-        const response = await Ong.destroy(findOng);
-        res.status(200).json({message: `Ong deletada: ${nome}`});
-    } catch(err) {
-        res.status(500).json(err);
+        const {id} = req.body
+        if(!id) {   // confiro se o id foi informado
+            return res.status(400).json({ message: "Campo obrigatório não informado (id)" });
+        }
+        if(!id) {
+            const findOng = await Ong.findByPk(id);
+            
+            if(!findOng) {
+                return res.status(404).json({message: "Ong nao encontrada!"});
+            }
+        }
+            await Ong.destroy({where: {id}});
+            res.status(200).json({message: `Ong deletada: ${id}`});
+        } catch(err) {
+            res.status(500).json(err);
     }
 });
 
